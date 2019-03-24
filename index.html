@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>HTML</title>
+
+<!-- Links -->
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+</head>
+
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+        <div class="jumbotron">Hangman Game
+        </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+
+    // Arrays
+    var wordList = ["cat", "dog", "pig", "owl"];
+
+    // Pick a random word
+    var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+    
+    // Answer array
+    var answerArray = [];
+    for (var i = 0; i < randomWord.length; i++){
+        answerArray[i] = "_";
+    }
+    var remainingLetters = randomWord.length;
+
+    // References of where we want to display things
+    var directionsText = document.getElementById("directions-text");
+    var userChoiceText = document.getElementById("userchoice-text");
+    var computerChoiceText = document.getElementById("computerchoice-text");
+    var winsText = document.getElementById("wins-text");
+    var lossesText = document.getElementById("losses-text");
+    var tiesText = document.getElementById("ties-text");
+
+
+
+
+
+
+
+    // Game loop
+    while (remainingLetters > 0) {
+        // Show players their progress
+        alert(answerArray.join(" "));
+
+        // Get guess from player
+        var guess = prompt("Guess a letter, or click Cancel to stop playing.");
+        if (guess === null) {
+            // Exit game loop
+            break;
+        }
+        else if (guess.length !== 1) {
+            alert("please enter a single letter.");
+        }
+        else {
+            // Update the game state with a guess
+            for (var j = 0; j < randomWord.length; j++) {
+                if (randomWord[j] === guess) {
+                    answerArray[j] = guess;
+                    remainingLetters--;
+                }
+            }
+        }
+    }
+    // End of game loop
+
+    // Show the answer and congratulate the player
+    alert(answerArray.join(" "));
+    alert("Good job! The answer was " + randomWord);
+
+    </script>
+
+</body>
+
+</html>
