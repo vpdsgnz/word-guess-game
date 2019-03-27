@@ -1,7 +1,7 @@
 // Problems I'm having:
     // The game won't restart if I lose.
     // I want to not accept a repeat of a key entry, so that it doesn't count twice as a guess.
-    // 
+    // Wanted to reset game by "Press Any Key to Play Again".
 
 wordList = [
     "pikachu",
