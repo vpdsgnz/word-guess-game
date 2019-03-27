@@ -1,0 +1,40 @@
+body {
+    font-family: 'PixelOperatorRegular'; 
+    font-weight: normal; 
+    font-style: normal;
+    text-align: center;
+}
+
+.pokeBox {
+    border-radius: 2px;
+    padding: 20px;
+    width: 500px;
+    line-height: 16px;
+    margin: 10px auto;
+    background: white;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 1px black,
+                inset 0 1px 0 1px black,
+                0 0 0 1px black,
+                inset 0 0 0 1px black;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 8px;
+    letter-spacing: 8px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 4px;
+}
+section {
+    margin: 15px auto;
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 1vw;
+}
